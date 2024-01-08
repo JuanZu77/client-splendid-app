@@ -9,7 +9,9 @@ export enum themePalette {
   // casi blanco
   BG = "#F4F5F6",
   // rosita
-  LOGO = "#FF7873",
+  // LOGO = "#FF7873",
+  // amarillo
+  LOGO = "#F2CF66",
   // gris
   BORDERS = "#696969",
   // celeste
@@ -20,6 +22,8 @@ export enum themePalette {
   BIG = "Bangers",
   // fuente default
   DEF = "Nunito",
+  // fuente logo
+  SPLEN = "Bubblegum+Sans",
 }
 
 const theme = createTheme({
@@ -42,8 +46,8 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Nunito", "Bangers", "Arial", "sans-serif"].join(","),
-    fontSize: 20,
+    fontFamily: ["Nunito", "Bangers", "Bubblegum+Sans", "sans-serif"].join(","),
+    fontSize: 15,
   },
   components: {
     MuiButton: {
