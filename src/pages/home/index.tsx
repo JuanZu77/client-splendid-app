@@ -11,6 +11,21 @@ import coverCut from "../../assets/comicCut.png";
 import { themePalette } from "../../config/theme.config";
 
 export const HomePage: React.FC<{}> = () => {
+  const [searchData, setSearchData] = React.useState<string>();
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setSearchData(event.target.value);
+  };
+
+  const handleSearch = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    console.log("Esto es el estado:", searchData);
+  };
+
   return (
     <Container>
       <Grid container spacing={8}>
@@ -19,7 +34,7 @@ export const HomePage: React.FC<{}> = () => {
             <img
               src={coverCut}
               alt="Comic City high contrast"
-              style={{ height: "34rem", maxWidth: "100vh" }}
+              style={{ height: "32rem", maxWidth: "100vh" }}
             />
           </Box>
         </Grid>
@@ -48,26 +63,39 @@ export const HomePage: React.FC<{}> = () => {
               en tu comunidad
             </Typography>
           </Box>
-          {/* Search bar */}
-          <Box display="flex" alignItems="center" mt={5}>
+
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            mt={5}
+            // style={{ position: "sticky", top: 1 }}
+          >
             <TextField
               variant="outlined"
               fullWidth
+              type="search"
+              name="searchData"
+              onChange={handleChange}
               label={
                 <Typography
                   variant="body1"
-                  style={{
+                  sx={{
                     fontFamily: "Nunito",
                     color: "primary",
                     fontSize: "15px",
                   }}
                 >
-                  Encuentra lo que estas buscando
+                  Encuentra lo que estás buscando
                 </Typography>
               }
             />
-            {/* <TextField variant="outlined" fullWidth /> */}
-            <Button variant="outlined" sx={{ marginLeft: "-6.5rem" }}>
+
+            <Button
+              variant="outlined"
+              sx={{ marginLeft: "-6.5rem" }}
+              onClick={handleSearch}
+            >
               Search
             </Button>
           </Box>

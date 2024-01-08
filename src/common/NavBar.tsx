@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import React from "react";
 import { themePalette } from "../config/theme.config";
-import logo from "../assets/splendid-high-resolution-logo.svg";
 
 export const NavBar: React.FC<{}> = () => {
   return (
@@ -25,18 +24,9 @@ export const NavBar: React.FC<{}> = () => {
               alignItems="center"
             >
               <Grid item>
-                {/* <img
-                  src={logo}
-                  alt="logo"
-                  style={{
-                    height: "3.5rem",
-                    maxWidth: "auto",
-                    marginTop: "0.5rem",
-                  }}
-                /> */}
                 <Typography
                   variant="h4"
-                  style={{
+                  sx={{
                     fontFamily: themePalette.SPLEN,
                     color: themePalette.ACCENT,
                   }}
